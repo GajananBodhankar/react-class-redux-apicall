@@ -4,6 +4,7 @@ import { apiCall } from ".";
 
 class View extends Component {
   componentDidMount(): void {
+    this.props.apiCall();
     console.log(this.props);
   }
   render() {

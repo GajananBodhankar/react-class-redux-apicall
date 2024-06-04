@@ -27,16 +27,17 @@ export function apiCall() {
   };
 }
 
-function counterReducer(state = initialState, action: { type: any }) {
+function counterReducer(state = initialState,
+  action: { type: any; payload: any }) {
   switch (action.type) {
     case "loading": {
       return { data: [], status: "loading" };
     }
     case "failed": {
-      return { dtata: [], status: "failed" };
+      return { data: [], status: "failed" };
     }
     case "success": {
-      return { data: [], status: "success" };
+      return { data: action.payload, status: "success" };
     }
   }
   return state;

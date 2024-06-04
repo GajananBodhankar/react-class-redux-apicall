@@ -2,7 +2,13 @@ import { connect } from "react-redux";
 import { Component } from "react";
 import { apiCall } from ".";
 
-class View extends Component {
+interface Iprops {
+  data: [];
+  status: string;
+  apiCall: () => void;
+}
+
+class View extends Component<Iprops> {
   componentDidMount(): void {
     this.props.apiCall();
     console.log(this.props);

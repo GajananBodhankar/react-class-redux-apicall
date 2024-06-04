@@ -17,6 +17,7 @@ class View extends Component<Iprops> {
     return (
       <div>
         <p>In view</p>
+        <p>{this.props.status}</p>
       </div>
     );
   }

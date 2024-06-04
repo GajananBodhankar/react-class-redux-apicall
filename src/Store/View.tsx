@@ -16,12 +16,12 @@ class View extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  data: state.data,
-  status: state.status,
+  data: state.counterReducer.data,
+  status: state.counterReducer.status,
 });
 const mapDispatchToProps = (dispatch) => {
   return {
-    apiCall,
+    apiCall:()=>dispatch(apiCall),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(View);
